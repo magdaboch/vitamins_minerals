@@ -25,7 +25,7 @@ SECRET_KEY = 'py8&0cg-$2(jwec)b2!)l7ja4+9fu)-tkl5en88k7h=r%w1sg^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vitaminsminerals.herokuapp.com', 'localhost:8000']
 
 
 # Application definition
