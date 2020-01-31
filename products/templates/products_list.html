@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table>
+        {% for product in products %}
+        <tr>
+            <th>{{ product.product_name }}</th>
+            <td>
+                <table>
+                    <tr>
+                        <th>Witaminy</th>
+                        <th>Zawartość w 100g</th>
+                    </tr>
+                {% for v in product.valuevit_set.all %}
+                    <tr>
+                        <td>{{ v.vitamin }}</td>
+                        <td>{{ v.value }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+            <td>
+            <table>
+                <tr>
+                    <th>Minerały</th>
+                    <th>Zawartość w 100g</th>
+                </tr>
+                    {% for m in product.valuemineral_set.all %}
+                        <tr>
+                            <td>{{ m.mineral }}</td>
+                            <td>{{ m.value }}</td>
+                        </tr>
+                    {% endfor %}
+            </table>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

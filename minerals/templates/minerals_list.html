@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Minerały</th>
+            <th>Rekomendowana wartość</th>
+        </tr>
+        {% for mineral in minerals %}
+            <tr>
+                <td><b>{{ mineral.mineral_name }}</b> {{ mineral.mineral_unit }}</td>
+                <td>{{ mineral.mineral_recomended_consuption }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

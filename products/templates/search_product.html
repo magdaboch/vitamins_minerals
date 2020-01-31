@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="GET">
+    {% csrf_token %}
+    <label>Podaj witaminę lub minerał</label>
+    <input type="text" name="filter_products" value="{{ filter_value }}"/>
+    <button type="submit">Filtruj</button>
+</form>
+{#    <button id="reset-filters">RESET</button>#}
+{#    <input type="hidden" value="0" name="reset_filters" id="reset-filters-input" />#}
+<ul>
+    {% for product in products %}
+        <li><b>{{ product.product_name }}</b></li>
+        {% for v in product.valuevit_set.all %}
+            {% if v.vitamin.vitamin_symbol == filter_value or v.vitamin.vitamin_name == filter_value %}
+            <li>{{ v.vitamin }}</li>
+            <li>{{ v.value }}</li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    {% for product_m in products_mineral %}
+        <li><b>{{ product_m.product_name }}</b></li>
+         {% for m in product_m.valuemineral_set.all %}
+            {% if m.mineral.mineral_symbol == filter_value or m.mineral.mineral_name == filter_value %}
+            <li>{{ m.mineral }}</li>
+            <li>{{ m.value }}</li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</ul>
+
+{% endblock %}

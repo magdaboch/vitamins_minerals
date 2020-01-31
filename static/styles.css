@@ -1,0 +1,12 @@
+body {
+    background-color: lavender;
+}
+header {
+    background-image: url("images/15679741.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+}
+td, th{
+    border: 1px solid black;
+}
