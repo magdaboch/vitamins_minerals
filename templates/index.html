@@ -65,6 +65,14 @@
           </button>
           <a class="navbar-brand" class="styleheader" href="{% url "index" %}">Witaminy i Minerały</a>
         </div>
+      <div class="navbar-header">
+          <ul class="nav navbar-nav navbar-center">
+
+          <li> <a href="{% url "vitamins_list" %}">Witaminy</a></li>
+          <li><a href="{% url "minerals_list" %}">Minerały</a></li>
+          <li><a href="{% url "products_list" %}">Produkty</a></li>
+          </ul>
+            </div>
         <div class="collapse navbar-collapse" id="mainNavBar">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{% url "search_products" %}">Wyszukaj produkt</a></li>

@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
-{% block content %}
+{% block start %}
 <form method="GET">
     {% csrf_token %}
-    <label>Podaj witaminę lub minerał</label>
+    <label>Podaj witaminę lub minerał:</label>
     <input type="text" name="filter_products" value="{{ filter_value }}"/>
     <button type="submit">Filtruj</button>
 </form>
