@@ -1,1 +1,1 @@
-web: gunicorn vitamins_minerals.wsgi --log-file-
+web: gunicorn vitamins_minerals.wsgi --log-file -
