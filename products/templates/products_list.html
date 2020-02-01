@@ -5,7 +5,7 @@
     <table>
         {% for product in products %}
         <tr>
-            <th>{{ product.product_name }}</th>
+            <th><a id="{{ product.product_name }}">{{ product.product_name }}</a></th>
             <td>
                 <table>
                     <tr>

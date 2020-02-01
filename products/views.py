@@ -28,5 +28,5 @@ def search_products(request):
                                                    "filter_value":filter_value})
 
 @login_required
-def add_product(request):
+def add_favourite_product(request):
     pass

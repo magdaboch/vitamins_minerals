@@ -5,13 +5,13 @@
     {% csrf_token %}
     <label>Podaj witaminę lub minerał:</label>
     <input type="text" name="filter_products" value="{{ filter_value }}"/>
-    <button type="submit">Filtruj</button>
+    <button type="submit">Szukaj</button>
 </form>
 {#    <button id="reset-filters">RESET</button>#}
 {#    <input type="hidden" value="0" name="reset_filters" id="reset-filters-input" />#}
 <ul>
     {% for product in products %}
-        <li><b>{{ product.product_name }}</b></li>
+        <li><a href="{% url "products_list" %}"><b>{{ product.product_name }}</b></a></li>
         {% for v in product.valuevit_set.all %}
             {% if v.vitamin.vitamin_symbol == filter_value or v.vitamin.vitamin_name == filter_value %}
             <li>{{ v.vitamin }}</li>
