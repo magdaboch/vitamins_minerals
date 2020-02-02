@@ -12,7 +12,7 @@ class Vitamin(models.Model):
     vitamin_recomended_consuption = models.DecimalField(max_digits=6, decimal_places=3)
 
     def __str__(self):
-        return f'{self.vitamin_name}'
+        return f'{self.vitamin_name} [{self.vitamin_unit}]'
 
     class Meta:
         verbose_name = 'Witamina'

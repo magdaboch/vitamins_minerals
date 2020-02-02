@@ -1,17 +1,17 @@
 {% extends 'index.html' %}
 
 {% block start %}
-    <table>
+    <table class="container-fluid">
         <tr>
-            <th class="col-xs-4">Witaminy</th>
-            <th class="col-xs-4">Nazwa</th>
+            <th class="col-xs-4">Witamina</th>
+            <th class="col-xs-4">Symbol i jednostka</th>
             <th class="col-xs-4">Rekomendowana wartość</th>
         </tr>
         {% for vitamin in vitamins %}
             <tr>
-                <td><b>{{ vitamin.vitamin_symbol }}</b> {{ vitamin.vitamin_unit }}</td>
-                <td>{{ vitamin.vitamin_name }}</td>
-            <td>{{ vitamin.vitamin_recomended_consuption }} </td>
+                <td><b>{{ vitamin.vitamin_name }}</b></td>
+                <td>{{ vitamin.vitamin_symbol }} [{{ vitamin.vitamin_unit }}]</td>
+                <td>{{ vitamin.vitamin_recomended_consuption }} </td>
             </tr>
         {% endfor %}
 

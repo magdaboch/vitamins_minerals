@@ -12,7 +12,7 @@ class Mineral(models.Model):
     mineral_recomended_consuption = models.DecimalField(max_digits=7, decimal_places=3)
 
     def __str__(self):
-        return f'{self.mineral_name}'
+        return f'{self.mineral_name} [{self.mineral_unit}]'
 
     class Meta:
         verbose_name = 'Minerał'

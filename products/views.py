@@ -16,7 +16,7 @@ def search_products(request):
     #     # if request.GET['reset_filters'] == '1':
     #     #     return redirect(to='products_list')
     filter_value = request.GET['filter_products'] if 'filter_products' in request.GET.keys() else ''
-    products = Product.objects.filter(Q(product_vitamin__vitamin_symbol=filter_value) |
+    products_vitamin = Product.objects.filter(Q(product_vitamin__vitamin_symbol=filter_value) |
                                       Q(product_vitamin__vitamin_name=filter_value))\
                                         .order_by('-valuevit__value')
     products_mineral = Product.objects.filter(Q(product_mineral__mineral_name=filter_value)|
@@ -24,9 +24,9 @@ def search_products(request):
                                                 .order_by('-valuemineral__value')
     # raise Exception(products)
 
-    return render(request, 'search_product.html', {"products":products, "products_mineral":products_mineral,
+    return render(request, 'search_product.html', {"products_vitamin":products_vitamin, "products_mineral":products_mineral,
                                                    "filter_value":filter_value})
 
 @login_required
-def add_favourite_product(request):
+def add_favorite_product(request):
     pass

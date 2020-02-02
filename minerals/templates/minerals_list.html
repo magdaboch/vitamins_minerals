@@ -1,14 +1,16 @@
 {% extends 'index.html' %}
 
 {% block start %}
-    <table>
+    <table class="container-fluid">
         <tr>
-            <th>Minerały</th>
+            <th>Minerał</th>
+            <th>Symbol i jednostka</th>
             <th>Rekomendowana wartość</th>
         </tr>
         {% for mineral in minerals %}
             <tr>
-                <td><b>{{ mineral.mineral_name }}</b> {{ mineral.mineral_unit }}</td>
+                <td><b>{{ mineral.mineral_name }}</b></td>
+                <td>{{ mineral.mineral_symbol }} [{{ mineral.mineral_unit }}]</td>
                 <td>{{ mineral.mineral_recomended_consuption }}</td>
             </tr>
         {% endfor %}
