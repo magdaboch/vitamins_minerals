@@ -17,8 +17,8 @@
             {#           <li><a href="{% url "products_list" product_v.id %}"><b>{{ product_v.product_name }}</b></a></li>#}
             <form method="POST">
                 {% csrf_token %}
-                <li><a href="{% url "products_list" %}"><b>{{ product_v.product_name }}</b></a>
-
+                <li><a href="{% url "products_list" %}#{{ product_v.id }}"><b>{{ product_v.product_name }}</b></a>
+                    &nbsp;&nbsp;
                 <input type="image" name="add_to_favorite" src="{% static 'images/add-favourite.png' %}"/>
                 </li>
             </form>
@@ -34,8 +34,14 @@
     </ul>
     <ul>
         {% for product_m in products_mineral %}
+            <form method="POST">
+                {% csrf_token %}
 {#           <li><a href="{% url "products_list" product_m.id %}"><b>{{ product_m.product_name }}</b></a></li>#}
-            <li><a href="{% url "products_list" %}"><b>{{ product_m.product_name }}</b></a></li>
+            <li><a href="{% url "products_list" %}#{{ product_m.id }}"><b>{{ product_m.product_name }}</b></a>
+                &nbsp;&nbsp;
+            <input type="image" name="add_to_favorite" src="{% static 'images/add-favourite.png' %}"/>
+            </li>
+            </form>
              {% for m in product_m.valuemineral_set.all %}
                 {% if m.mineral.mineral_symbol == filter_value or m.mineral.mineral_name == filter_value %}
                     <ul>

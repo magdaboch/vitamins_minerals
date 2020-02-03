@@ -13,3 +13,7 @@ th {
     letter-spacing: 0.1em;
     text-align: left;
 }
+.id-fix {
+    padding-top: 40px;
+    margin-top: -40px;
+}

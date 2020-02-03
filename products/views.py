@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import *
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from user.models import MyUser
 
 
 # Create your views here.
@@ -29,4 +30,6 @@ def search_products(request):
 
 @login_required
 def add_favorite_product(request):
+    # if request.method == 'POST':
+    #     favourite = MyUser.user_products.get_or_create(product_name='')
     pass
